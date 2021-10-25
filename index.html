@@ -1,0 +1,44 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        section
+        {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url(bg.jpg);
+            background-size: cover;
+            /* filter: brightness(100%); */
+        }
+        .focus
+        {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <body>
+    <section>
+        <div class="focus"></div>
+    </section>
+    <script type="text/javascript">
+$(function() {
+    $("section").css("filter","brightness(00%)")
+});
+        $(document).mousemove(function(e){
+                var X = e.pageX;
+                var Y = e.pageY;
+                $("section").css("filter","brightness(100%)")
+                $('.focus').css('background','radial-gradient(circle at '+X+'px '+Y+'px, transparent, #000 40%)')
+                })
+    </script>
+    </body>
+    </html>
